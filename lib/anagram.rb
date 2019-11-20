@@ -8,12 +8,10 @@ class Anagram
            #binding.pry
       end
       def match(words)
-          words.collect do |each_word|
-            if each_word == word
-             
-            end
-            #binding.pry
-         end
-          
-      end
-end
+          words.select do |each_word|
+          @word.split("").sort == each_word.split('').sort
+          end 
+        end
+  end
+listen = Anagram.new("listen")
+listen.match(%w(enlists google inlets banana))
